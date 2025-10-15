@@ -1,5 +1,10 @@
-# revil
-Revil is a pentesting suite for the Berkeley r-commands. The r-commmands are inherently insecure because they put to much trust into the client sending things like username or hostname / ip. Thus it can be a good target for pentesters.
+<div align=center>
+  <img height="150" alt="" />
+  <h1>revil</h1>
+
+</div>
+
+`revil` is a pentesting suite for the Berkeley r-commands. The r-commmands are inherently insecure because they put to much trust into the client sending things like username or hostname / ip. Thus it can be a good target for pentesters.
 
 # Work in Progress
 Although the first couple of functionalities are working like rlogin and potentially rsh, the suite is still in a heavy work in progress phase.
