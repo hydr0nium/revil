@@ -1,9 +1,10 @@
 <div align=center>
   <img height="150" src="https://raw.githubusercontent.com/hydr0nium/revil/refs/heads/main/assets/revil.svg" alt="" />
   <h1>revil</h1>
-![python](https://img.shields.io/badge/Python-3.11%2B-blue)
+  
 </div>
 
+![python](https://img.shields.io/badge/Python-3.11%2B-blue?style=flat-square)
 
 `revil` is a pentesting suite for the Berkeley r-commands. The r-commmands are inherently insecure because they put to much trust into the client sending things like username or hostname / ip. Thus it can be a good target for pentesters.
 
