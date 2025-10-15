@@ -6,10 +6,43 @@
 
 `revil` is a pentesting suite for the Berkeley r-commands. The r-commmands are inherently insecure because they put to much trust into the client sending things like username or hostname / ip. Thus it can be a good target for pentesters.
 
-# Work in Progress
-Although the first couple of functionalities are working like rlogin and potentially rsh, the suite is still in a heavy work in progress phase.
+> [!WARNING]
+> This project is work in progress. The current version has some stable functions like rlogin and rsh but the stability is not guaranteed. 
 
-# Tested commands:
+# Installation
+```shell
+pipx install git+https://github.com/hydr0nium/revil.git
+```
+> [!TIP]
+> To make revil globally available you can use the following commands
+> ```shell
+> sudo bash -c '$PATH' # To get the paths of root
+> which revil # To get the path of revil
+> sudo ln -s /path/to/revil/ /path/to/some/root/path
+> ```
+
+# Usage
+`revil` may need to run as root because the r-commands often require the client to establish a connection from a privileged port.
+> [!TIP]
+> The root requirement can be disabled with the `--noroot` flag
+```shell
+usage: Revil [-h] {rlogin,rsh,rexec,rwho} ...
+
+positional arguments:
+  {rlogin,rsh,rexec,rwho}
+    rlogin              Use rlogin
+    rsh                 Use rsh
+    rexec               Use rexec
+    rwho                Use rwho
+
+options:
+  -h, --help            show this help message and exit
+```
+> [!IMPORTANT]
+> The usage is subject to change
+
+# 🗺️ Roadmap
+- [x] username-spoofing
 - [x] rlogin 
 - [x] rsh 
 - [ ] rexec
@@ -17,13 +50,9 @@ Although the first couple of functionalities are working like rlogin and potenti
 - [ ] rstat
 - [ ] rcp
 - [ ] ruptime
+- [ ] IP spoofing
 
 # Motivation
-When I was solving a hackthebox machine which needed to exploit rlogins trust feature I found that the normal `rlogin` does not allow to spoof your original username. I needed to make a new user with the correct name and use it to login. Revil eliminates this problem by allowing to spoof usernames and (eventually) IPs
+> [!NOTE]
+> When I was solving a hackthebox machine which needed to exploit rlogins trust feature I found that the normal `rlogin` does not allow to spoof your original username. I needed to make a new user with the correct name and use it to login. Revil eliminates this problem by allowing to spoof usernames and (eventually) IPs
 
-# Usage
-Programm needs to run as root to work because the r-commands sometimes require the client to establish a connection FROM a restricted (< 1024) port.
-The root requirement can be disabled with the `--noroot` flag
-```shell
-revil --help # For now see this for usage
-```
