@@ -8,6 +8,9 @@ services:
     networks:
       rnetwork:
         ipv4_address: 10.13.37.10
+    extra_hosts:
+      - "docker:10.13.37.1"
+
 networks:
   rnetwork:
     ipam:

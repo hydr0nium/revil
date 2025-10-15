@@ -18,7 +18,8 @@ RUN echo "rsh stream tcp nowait root /usr/sbin/tcpd /usr/sbin/in.rshd" > /etc/in
 RUN useradd -m testuser && echo "testuser:testpass" | chpasswd
 
 RUN echo "+ testuser" >> /etc/hosts.equiv
-RUN echo "10.13.37.1 dockerhost" >> /etc/hosts
+RUN echo "+ testuser" >> /home/testuser/.rhosts
+RUN chmod +r /home/testuser/.rhosts
 
 EXPOSE 512 513 514
 # Start xinetd (it will handle the daemons)
