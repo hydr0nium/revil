@@ -28,7 +28,10 @@ def interactive(sock):
 
             # If there's data from the socket, write it to stdout
             if sock in rlist:
-                data = sock.recv(1024)
+                try: # There is a bug which just breaks here. Maybe this try/except fixes this
+                    data = sock.recv(1024)
+                except Exception:
+                    pass
                 if not data:
                     break  # Connection closed
                 os.write(sys.stdout.fileno(), data)
