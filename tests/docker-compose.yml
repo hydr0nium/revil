@@ -1,0 +1,15 @@
+services:
+  rservices:
+    build: .
+    ports:
+      - 512:512
+      - 513:513
+      - 514:514
+    networks:
+      rnetwork:
+        ipv4_address: 10.13.37.10
+networks:
+  rnetwork:
+    ipam:
+      config:
+        - subnet: 10.13.37.0/24
